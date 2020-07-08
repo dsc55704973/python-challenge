@@ -8,7 +8,7 @@
 import os
 import csv
 
-# Set file path
+# set file path
 csvpath = os.path.join('Resources_CSVfiles','budget_data.csv')
 
 # keys
@@ -79,11 +79,11 @@ print(f'Greatest Decrease in Profits: {GDI_month} ${greatest_decrease}')
 # output to text file
 analysispath = os.path.join('Analysis','Analysis.txt')
 with open(analysispath, mode='w') as output:
-    output.write(f'Financial Analysis')
-    output.write(f'----------------------------')
-    output.write(f'Total Months: {total_months}')
+    output.write(f'Financial Analysis ')
+    output.write(f'---------------------------- ')
+    output.write(f'Total Months: {total_months} ')
     output.write(f'Total: ${total_profit_loss} ')
-    output.write(f'Average  Change: ${average_change}')
-    output.write(f'Greatest Increase in Profits: {GII_month} ${greatest_increase}')
-    output.write(f'Greatest Decrease in Profits: {GDI_month} ${greatest_decrease}')
+    output.write(f'Average  Change: ${average_change} ')
+    output.write(f'Greatest Increase in Profits: {GII_month} ${greatest_increase} ')
+    output.write(f'Greatest Decrease in Profits: {GDI_month} ${greatest_decrease} ')
 
