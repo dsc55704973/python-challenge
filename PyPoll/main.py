@@ -16,6 +16,10 @@ total_voters = 0
 voter_ID_list = []
 candidate_list = []
 master_candidate_list = []
+khan_total_votes = 0
+correy_total_votes = 0
+li_total_votes = 0
+otooley_total_votes = 0
 
 # open and read
 with open(csvpath) as infile:
@@ -35,11 +39,23 @@ with open(csvpath) as infile:
 for candidate in candidate_list:
     if candidate not in master_candidate_list:
         master_candidate_list.append(candidate)
+            
 
 # number of votes each candidate won
+for x in candidate_list:
+    if str(x) == master_candidate_list[0]: 
+        khan_total_votes = khan_total_votes + 1
+    if str(x) == master_candidate_list[1]: 
+        correy_total_votes = correy_total_votes + 1
+    if str(x) == master_candidate_list[2]: 
+        li_total_votes = li_total_votes + 1
+    if str(x) == master_candidate_list[3]: 
+        otooley_total_votes = otooley_total_votes + 1      
 
+# percentage votes per candidate
+khan_percentage_votes = (khan_total_votes / total_voters) * 100
+correy_percentage_votes = (khan_total_votes / total_voters) * 100
+li_percentage_votes = (khan_total_votes / total_voters) * 100
+otooley_percentage_votes = (khan_total_votes / total_voters) * 100
 
-# Khan = {
-   # khan_percentage_votes, khan_total_votes
-#}
 
