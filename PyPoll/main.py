@@ -20,6 +20,7 @@ khan_total_votes = 0
 correy_total_votes = 0
 li_total_votes = 0
 otooley_total_votes = 0
+election_results_list = []
 
 # open and read
 with open(csvpath) as infile:
@@ -54,8 +55,12 @@ for x in candidate_list:
 
 # percentage votes per candidate
 khan_percentage_votes = (khan_total_votes / total_voters) * 100
-correy_percentage_votes = (khan_total_votes / total_voters) * 100
-li_percentage_votes = (khan_total_votes / total_voters) * 100
-otooley_percentage_votes = (khan_total_votes / total_voters) * 100
+correy_percentage_votes = (correy_total_votes / total_voters) * 100
+li_percentage_votes = (li_total_votes / total_voters) * 100
+otooley_percentage_votes = (otooley_total_votes / total_voters) * 100
+election_results_list = [khan_percentage_votes,correy_percentage_votes,li_percentage_votes,otooley_percentage_votes]
 
+
+index = election_results_list.index(max(election_results_list))
+master_candidate_list[index]
 
