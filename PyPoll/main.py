@@ -53,14 +53,44 @@ for x in candidate_list:
     if str(x) == master_candidate_list[3]: 
         otooley_total_votes = otooley_total_votes + 1      
 
-# percentage votes per candidate
-khan_percentage_votes = (khan_total_votes / total_voters) * 100
-correy_percentage_votes = (correy_total_votes / total_voters) * 100
-li_percentage_votes = (li_total_votes / total_voters) * 100
-otooley_percentage_votes = (otooley_total_votes / total_voters) * 100
+# percentage votes per candidate, rounded to n=3 decimal places
+khan_percentage_votes = round(((khan_total_votes / total_voters) * 100), 3)
+correy_percentage_votes = round(((correy_total_votes / total_voters) * 100), 3)
+li_percentage_votes = round(((li_total_votes / total_voters) * 100), 3)
+otooley_percentage_votes = round(((otooley_total_votes / total_voters) * 100), 3)
+
+print(khan_percentage_votes)
+
+# create election results list, index it to master candidate list to determine winner
 election_results_list = [khan_percentage_votes,correy_percentage_votes,li_percentage_votes,otooley_percentage_votes]
-
-
 index = election_results_list.index(max(election_results_list))
-master_candidate_list[index]
+election_winner = master_candidate_list[index]
 
+# output to terminal
+print('Election Results')
+print(f'-------------------------')
+print(f'Total Votes: {total_voters}')
+print(f'-------------------------')
+print(f'Khan: {khan_percentage_votes} % ({khan_total_votes})')
+print(f'Correy: {correy_percentage_votes} % ({correy_total_votes})')
+print(f'Li: {li_percentage_votes} % ({li_total_votes})')
+print(f'OTooley: {otooley_percentage_votes} % ({otooley_total_votes})')
+print(f'-------------------------')
+print(f'Winner: {election_winner}')
+print(f'-------------------------')
+
+
+# output to text file
+analysispath = os.path.join('Analysis','Analysis.txt')
+with open(analysispath, mode='w') as output:
+    output.write('Election Results')
+    output.write(f'-------------------------')
+    output.write(f'Total Votes: {total_voters}')
+    output.write(f'-------------------------')
+    output.write(f'Khan: {khan_percentage_votes} % ({khan_total_votes})')
+    output.write(f'Correy: {correy_percentage_votes} % ({correy_total_votes})')
+    output.write(f'Li: {li_percentage_votes} % ({li_total_votes})')
+    output.write(f'OTooley: {otooley_percentage_votes} % ({otooley_total_votes})')
+    output.write(f'-------------------------')
+    output.write(f'Winner: {election_winner}')
+    output.write(f'-------------------------')
